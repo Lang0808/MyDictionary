@@ -1,0 +1,33 @@
+#SomethingWrong {
+    display: none;
+    color: red;
+    padding: 10px;
+}
+
+#CreateAccountWrapper {
+    text-align: center;
+}
+
+#TitleCreateAccount {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#FormCreateAccount {
+    text-align: center;
+}
+
+#new_username,
+#new_password,
+#confirm_password {
+    padding: 10px;
+    margin: 10px;
+    width: 40%;
+    font-size: 15px;
+}
+
+#SubmitSignup {
+    padding: 10px;
+    background-color: lightblue;
+}

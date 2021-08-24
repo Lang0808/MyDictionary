@@ -1,0 +1,17 @@
+.inputText {
+    margin: 15px;
+    display: block;
+    padding: 15px;
+    font-size: 18px;
+}
+
+#SubmitButton {
+    padding: 15px;
+    background-color: lightblue;
+    margin: 10px;
+}
+
+#WrongPassword {
+    display: none;
+    color: red;
+}
