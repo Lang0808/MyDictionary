@@ -3,7 +3,7 @@ Have you ever seen a word that you knew its meaning, but you have forgotten it ?
 This application helps you save your own definition about words you met.<br/>
 Not only save meaning of the word, you can also save (note) its usage, how to use it, and its synonym.<br/>
 
-#Run MyDictionary
+# Run MyDictionary
 Clone this repository into your local machine<br/>
 Open command line, run "npm install"<br/>
 "cd client" and "npm install"<br/>
