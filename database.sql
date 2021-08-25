@@ -16,4 +16,4 @@ CREATE TABLE word (
 
 ALTER TABLE word
 ADD
-CONSTRAINT FK_WORD_USER foreign key(nguoi_dung) references nguoi_dung(ten_nguoi_dung)
+CONSTRAINT FK_WORD_USER foreign key(nguoi_dung) references nguoi_dung(ten_nguoi_dung);
