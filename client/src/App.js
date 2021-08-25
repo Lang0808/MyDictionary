@@ -88,7 +88,9 @@ class App extends React.Component {
             <Home
               user={this.state.user}/>
           </Route>
-          <Route exact path="/YourDictionary"><YourWord/></Route>
+          <Route exact path="/YourDictionary">
+            <YourWord user={this.state.user}/>
+          </Route>
           <Route exact path="/createAccount">
             <CreateAccount
               handleSubmit={this.handleSubmitSignup}/>

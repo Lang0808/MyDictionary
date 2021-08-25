@@ -11,7 +11,7 @@ class AddWord extends React.Component{
             contentLanguage2: '',
         }
         this.handleChangeLanguage2=this.handleChangeLanguage2.bind(this);
-        this.handleChangeLanguage2=this.handleChangeLanguage2.bind(this);
+        this.handleChangeLanguage1=this.handleChangeLanguage1.bind(this);
         this.handleChangeContentLanguage2=this.handleChangeContentLanguage2.bind(this);
         this.handleChangeContentLanguage1=this.handleChangeContentLanguage1.bind(this);
     }
