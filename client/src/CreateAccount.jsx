@@ -93,9 +93,9 @@ class CreateAccount extends React.Component{
     reset(){
         var temp=document.getElementById("new_username");
         temp.style.border='1px solid black';
-        var temp=document.getElementById("new_password");
+        temp=document.getElementById("new_password");
         temp.style.border='1px solid black';
-        var temp=document.getElementById("confirm_password");
+        temp=document.getElementById("confirm_password");
         temp.style.border='1px solid black';
     }
     isValid(){

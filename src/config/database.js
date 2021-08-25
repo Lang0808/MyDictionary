@@ -1,6 +1,6 @@
 const { Pool } = require('pg');
 const dotenv = require('dotenv');
-const app = require('../index');
+const app = require('../app');
 
 dotenv.config();
 
