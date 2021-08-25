@@ -85,7 +85,10 @@ class App extends React.Component {
                 handleCloseSignin={this.handleCloseSignin}
                 handleSubmit={this.handleSubmitSignin}/>
         <Switch>
-          <Route exact path="/"><Home/></Route>
+          <Route exact path="/">
+            <Home
+              user={this.state.user}/>
+          </Route>
           <Route exact path="/YourDictionary"><YourWord/></Route>
           <Route exact path="/createAccount">
             <CreateAccount

@@ -23,6 +23,8 @@ class CreateAccount extends React.Component{
         this.setState({
             successSignup: true,
         });
+        localStorage.setItem('user', this.state.username);
+        localStorage.setItem('password', this.state.password);
     }
     handleCloseSuccessSignup(){
         this.setState({
