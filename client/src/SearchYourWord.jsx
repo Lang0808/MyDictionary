@@ -1,3 +1,5 @@
+
+
 function SearchYourWord(props){
     return (
         <div>
@@ -13,6 +15,7 @@ function SearchYourWord(props){
                         Ngôn ngữ 1: {item.ngon_ngu_1}, Ngôn ngữ 2: {item.ngon_ngu_2}<br/>
                         Từ 1: {item.tu_1}, Từ 2: {item.tu_2}<br/>
                         <br/>
+                        
                     </div>
                 )
             })}

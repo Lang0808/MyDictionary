@@ -1,0 +1,19 @@
+.CardWrapper {
+    width: 96%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.CardGrid {
+    margin: 2em 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 48px;
+}
+
+.Card {
+    background-color: var(--bg-offset);
+    padding: 0px;
+    box-shadow: 0px 2px 4px var(--border);
+    transition: all 0.3s cubic-beier(0.075, 0.82, 0.165, 1);
+}

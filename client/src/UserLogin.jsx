@@ -13,7 +13,7 @@ function UserLogin(props){
         return (
             <div>
                 <a className="ButtonUser">{props.user}</a>
-                <a className="ButtonUser" onClick={props.handleSignout}>Sign out</a>
+                <a className="ButtonUser" onClick={props.handleSignout} href="/">Sign out</a>
             </div>
         )
     }

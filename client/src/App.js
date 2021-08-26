@@ -42,7 +42,8 @@ class App extends React.Component {
     localStorage.removeItem("password");
     this.setState({
       user:'',
-    })
+    });
+
   }
   handleSubmitSignin(userName, passWord, handleWrongPassword){
     const information={
@@ -57,6 +58,7 @@ class App extends React.Component {
         localStorage.setItem('user', this.state.user);
         localStorage.setItem('password', res.data[0].mat_khau);
         this.handleCloseSignin();
+
       }
       else{
         if(handleWrongPassword!=null){

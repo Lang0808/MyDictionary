@@ -6,6 +6,7 @@ function Navbar(props){
         <ul id="NavbarContainer">
             <li><a className="NavbarItem" href="/">Logo</a></li>
             <li><a className="NavbarItem" href="/YourDictionary">YourDictionary</a></li>
+            
             <li id="Login">
                 <UserLogin user={props.user}
                         handleSignin={props.handleSignin}

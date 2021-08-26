@@ -1,5 +1,8 @@
 import React from "react";
 import AddWordInLanguage from "./AddWordInLanguage";
+import axios from 'axios';
+import AddWordUnSuccess from "./AddWordUnsuccess";
+import AddWordSuccess from "./AddWordSuccess";
 
 class AddWord extends React.Component{
     constructor(props){
@@ -9,11 +12,64 @@ class AddWord extends React.Component{
             language2: 'Vietnamese',
             contentLanguage1: '',
             contentLanguage2: '',
+            addWordSuccess: false,
+            addWordUnsuccess: false,
+            prevDef: ''
         }
         this.handleChangeLanguage2=this.handleChangeLanguage2.bind(this);
         this.handleChangeLanguage1=this.handleChangeLanguage1.bind(this);
         this.handleChangeContentLanguage2=this.handleChangeContentLanguage2.bind(this);
         this.handleChangeContentLanguage1=this.handleChangeContentLanguage1.bind(this);
+        this.handleSubmit=this.handleSubmit.bind(this);
+        this.handleCloseAddWordSuccess=this.handleCloseAddWordSuccess.bind(this);
+        this.handleCloseAddWordUnsuccess=this.handleCloseAddWordUnsucess.bind(this);
+    }
+    handleCloseAddWordUnsucess(){
+        this.setState({
+            addWordUnsuccess: false,
+        });
+    }
+    handleCloseAddWordSuccess(){
+        this.setState({
+            addWordSuccess: false,
+        });
+    }
+    handleSubmit(){
+        if(this.props.user===''){
+            alert("Cần đăng nhập để tiếp tục");
+        }
+        else{
+            const information = {
+                'user': this.props.user,
+                'ngon_ngu_1': this.state.language1,
+                'ngon_ngu_2': this.state.language2,
+                'tu_1': this.state.contentLanguage1,
+                'tu_2': this.state.contentLanguage2
+            };
+            axios.post('api/word/addWord', information).then(res=>{
+                this.setState({
+                    addWordSuccess: true,
+                });
+            })
+            .catch(error=>{
+                this.handleAddWordUnsuccess();
+                this.setState({
+                    addWordUnsuccess: true,
+                })
+            });
+        }
+        
+    }   
+    handleAddWordUnsuccess(){
+        const information={
+            'user': this.props.user,
+            'language1': this.state.language1,
+            'language2': this.state.language2,
+            'word1': this.state.contentLanguage1
+        };
+        console.log(information);
+        axios.post('/api/word/getWordInDetail', information)
+            .then(res=>this.setState({prevDef: res.data[0].tu_2}));
     }
     handleChangeLanguage1(event){
         event.preventDefault();
@@ -39,6 +95,7 @@ class AddWord extends React.Component{
             contentLanguage2: event.target.value,
         })
     }
+    
     render(){
         return (
             <div id="AddWordWrapper">
@@ -52,9 +109,25 @@ class AddWord extends React.Component{
                                     content={this.state.contentLanguage2}
                                     handleChangeContent={this.handleChangeContentLanguage2}/>
                 <button 
-                    onClick={()=>this.props.handleAddWord(this.state.language1, this.state.language2, this.state.contentLanguage1, this.state.contentLanguage2)}>
+                    onClick={this.handleSubmit}>
                         Thêm từ
                 </button>
+                <AddWordSuccess 
+                    isOpen={this.state.addWordSuccess}
+                    language1={this.state.language1}
+                    language2={this.state.language2}
+                    word1={this.state.contentLanguage1}
+                    word2={this.state.contentLanguage2}
+                    handleClose={this.handleCloseAddWordSuccess}/>
+                <AddWordUnSuccess
+                    user={this.props.user}
+                    language1={this.state.language1}
+                    language2={this.state.language2}
+                    word1={this.state.contentLanguage1}
+                    word2={this.state.contentLanguage2}
+                    prevDef={this.state.prevDef}
+                    isOpen={this.state.addWordUnsuccess}
+                    handleClose={this.handleCloseAddWordUnsuccess}/>
             </div>
         )
     }
