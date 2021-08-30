@@ -1,0 +1,17 @@
+.AddWordInLanguage {
+    margin: 10px;
+    padding: 10px;
+    flex: 50%;
+}
+
+.TextAddWord {
+    padding: 10px;
+    font-size: 15px;
+    width: 75%;
+}
+
+@media screen and (max-width: 992px) {
+    .AddWordInLanguage {
+        flex: 100%;
+    }
+}

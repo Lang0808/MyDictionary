@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./SeeSomeWord.css";
 
 class SeeSomeWord extends React.Component{
     constructor(props){
@@ -23,7 +24,9 @@ class SeeSomeWord extends React.Component{
             .catch(error=>{alert("ERROR !")});
     }
     componentDidMount(){
-        this.getSomeWord();
+        if(this.props.user!=''){
+            this.getSomeWord();
+        }
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.user !== this.props.user) {
@@ -32,11 +35,11 @@ class SeeSomeWord extends React.Component{
     }
     render(){
         return (
-
-            <div>
+            <div id="SeeSomeWord">
                 <h3>Các từ của bạn</h3>
-                <a href="/YourDictionary">Xem lại các từ bạn đã định nghĩa</a>
+                <a href="/YourDictionary" id="LinkToDictionary">Xem lại các từ bạn đã định nghĩa</a>
                 <p>Một vài từ bạn đã định nghĩa</p>
+                <br/>
                 {
                     this.state.done &&
                     <table>

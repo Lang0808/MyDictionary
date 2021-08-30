@@ -3,6 +3,7 @@ import AddWordInLanguage from "./AddWordInLanguage";
 import axios from 'axios';
 import AddWordUnSuccess from "./AddWordUnsuccess";
 import AddWordSuccess from "./AddWordSuccess";
+import "./AddWord.css";
 
 class AddWord extends React.Component{
     constructor(props){
@@ -98,20 +99,25 @@ class AddWord extends React.Component{
     
     render(){
         return (
+            <div>
             <div id="AddWordWrapper">
-                <h3>Thêm từ</h3>
-                <AddWordInLanguage language={this.state.language1}
-                                    handleChangeLanguage={this.handleChangeLanguage1}
-                                    content={this.state.contentLanguage1}
-                                    handleChangeContent={this.handleChangeContentLanguage1}/>
-                <AddWordInLanguage language={this.state.language2}
-                                    handleChangeLanguage={this.handleChangeLanguage2}
-                                    content={this.state.contentLanguage2}
-                                    handleChangeContent={this.handleChangeContentLanguage2}/>
+                <h3 id="Instruction">Thêm từ vào từ điển của chính bạn</h3>
+                <div id="AddWordInLanguageWrapper">
+                    <AddWordInLanguage language={this.state.language1}
+                                        handleChangeLanguage={this.handleChangeLanguage1}
+                                        content={this.state.contentLanguage1}
+                                        handleChangeContent={this.handleChangeContentLanguage1}/>
+                    <AddWordInLanguage language={this.state.language2}
+                                        handleChangeLanguage={this.handleChangeLanguage2}
+                                        content={this.state.contentLanguage2}
+                                        handleChangeContent={this.handleChangeContentLanguage2}/>
+                </div>
                 <button 
-                    onClick={this.handleSubmit}>
+                    onClick={this.handleSubmit}
+                    className="AddWordButton">
                         Thêm từ
                 </button>
+                </div>
                 <AddWordSuccess 
                     isOpen={this.state.addWordSuccess}
                     language1={this.state.language1}
@@ -129,6 +135,7 @@ class AddWord extends React.Component{
                     isOpen={this.state.addWordUnsuccess}
                     handleClose={this.handleCloseAddWordUnsuccess}/>
             </div>
+            
         )
     }
     

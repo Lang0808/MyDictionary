@@ -1,7 +1,7 @@
 
 import './App.css';
 import React from "react";
-import Navbar from "./Navbar";
+import NavigationBar from "./NavigationBar";
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,6 +12,8 @@ import YourWord from "./YourWord";
 import SignIn from "./SignIn";
 import axios from 'axios';
 import CreateAccount from "./CreateAccount";
+import SideDrawer from './SideDrawer';
+import BackDrop from "./Backdrop";
 
 class App extends React.Component {
   constructor(props){
@@ -19,11 +21,14 @@ class App extends React.Component {
     this.state={
       user: '',
       signinOn: false,
+      sideDrawerOn: false,
     }
     this.handleSignin=this.handleSignin.bind(this);
     this.handleSignout=this.handleSignout.bind(this);
     this.handleCloseSignin=this.handleCloseSignin.bind(this);
     this.handleSubmitSignin=this.handleSubmitSignin.bind(this);
+    this.handleCloseSideDrawer=this.handleCloseSideDrawer.bind(this);
+    this.handleOpenSideDrawer=this.handleOpenSideDrawer.bind(this);
   }
   componentDidMount(){
     const user=localStorage.getItem('user');
@@ -67,28 +72,45 @@ class App extends React.Component {
       }
     })
   }
-  
+  handleCloseSideDrawer(){
+    this.setState({
+      sideDrawerOn: false,
+    })
+  }
   handleCloseSignin(){
     this.setState({
       signinOn: false,
     })
   }
+  handleOpenSideDrawer(){
+    this.setState((prevState)=>{
+      return {sideDrawerOn: !prevState.sideDrawerOn}
+    });
+  }
   render(){
+    let backDrop;
+    if(this.state.sideDrawerOn){
+      backDrop=<BackDrop click={this.handleCloseSideDrawer}/>
+    }
     return (
-      <Router>
+      <Router style={{height: '100%'}}>
       <div className="App">
         <div>
-          <Navbar user={this.state.user} 
+          <NavigationBar user={this.state.user} 
               handleSignin={this.handleSignin}
-              handleSignout={this.handleSignout}/>
+              handleSignout={this.handleSignout}
+              handleOpenSideDrawer={this.handleOpenSideDrawer}/>
         </div>
+        <SideDrawer user={this.state.user} show={this.state.sideDrawerOn}
+                  handleSignin={this.handleSignin} handleSignout={this.handleSignout}/>
+        {backDrop}
         <SignIn isOpen={this.state.signinOn}
                 handleCloseSignin={this.handleCloseSignin}
                 handleSubmit={this.handleSubmitSignin}/>
         <Switch>
           <Route exact path="/">
             <Home
-              user={this.state.user}/>
+              user={this.state.user} />
           </Route>
           <Route exact path="/YourDictionary">
             <YourWord user={this.state.user}/>

@@ -1,3 +1,12 @@
 .selectpicker {
     display: inline;
 }
+
+.SelectLanguage {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.TitleSelectLanguage {
+    margin: 10px;
+}

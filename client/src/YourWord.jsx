@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import SearchYourWord from "./SearchYourWord";
 import TenRandomWord from "./TenRandomWord";
+import "./YourDictionary.css";
 
 class YourWord extends React.Component{
     constructor(props){
@@ -54,7 +55,7 @@ class YourWord extends React.Component{
             )
         }
         return (
-            <div>
+            <div id="YourDictionaryWrapper">
                 <div>Tu dien cua ban</div>
                 <br/>
                 <SearchYourWord SearchValue={this.state.SearchValue}
