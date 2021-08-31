@@ -1,4 +1,5 @@
 table {
+    table-layout: fixed;
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -9,6 +10,7 @@ th {
     border: 1px solid black;
     text-align: left;
     padding: 8px;
+    word-wrap: break-word;
 }
 
 tr:nth-child(even) {
@@ -27,4 +29,15 @@ tr:nth-child(even) {
     padding: 10px;
     margin: 10px auto;
     /* background-color: dodgerblue; */
+}
+
+#SeeSomeWord a {
+    text-decoration: none;
+    color: white;
+}
+
+#SeeSomeWord a:hover,
+#SeeSomeWord a:active {
+    color: orange;
+    background-color: purple;
 }

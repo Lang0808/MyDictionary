@@ -51,12 +51,12 @@ class YourWord extends React.Component{
     render(){
         if(this.props.user===''){
             return (
-                <div>Bạn cần phải đăng nhập</div>
+                <div id="YourDictionaryWrapper">Bạn cần phải đăng nhập</div>
             )
         }
         return (
             <div id="YourDictionaryWrapper">
-                <div>Tu dien cua ban</div>
+                <h2>Từ điển của bạn</h2>
                 <br/>
                 <SearchYourWord SearchValue={this.state.SearchValue}
                                 handleChange={this.handleChangeSearchWord}

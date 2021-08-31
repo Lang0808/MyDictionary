@@ -14,13 +14,13 @@ class TenRandomWord  extends React.Component{
     render(){
         return (
             <div>
-                <p>Giải thích: Mỗi lần click nút roll, chúng tôi sẽ lấy ra 10 từ bất kỳ trong từ điển của bạn, và 30s sau bạn mới được roll tiếp</p>
+                <p className="explaination-roll">Giải thích: Mỗi lần click nút roll, chúng tôi sẽ lấy ra 10 từ bất kỳ trong từ điển của bạn, và 30s sau bạn mới được roll tiếp</p>
                 <ButtonRoll handleClick={this.props.handleRoll}/>
                 <div className="CardWrapper">
                     <div className="CardGrid">
                         {this.props.data.map(item=>{
-                            var FrontSide=<div><h4>{item.ngon_ngu_1} to {item.ngon_ngu_2}</h4><h4>{item.tu_1}</h4></div>
-                            var BackSide=<div><h4>{item.tu_2}</h4></div>
+                            var FrontSide=<div  className="textInCard"><h4>{item.ngon_ngu_1} to {item.ngon_ngu_2}</h4><h4>{item.tu_1}</h4></div>
+                            var BackSide=<div className="textInCard"><h4 >{item.tu_2}</h4></div>
                             return (
                                 <Card className="Card" FrontSide={FrontSide} BackSide={BackSide}/>
                             )

@@ -25,7 +25,7 @@ class NavigationBar extends React.Component{
                             {signOutSection}
                         </ul>
                     </div>
-                    <div>{this.props.user}</div>
+                    <div className="ten_nguoi_dung">{this.props.user}</div>
                 </nav>
             </header>
         )

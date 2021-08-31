@@ -38,10 +38,12 @@
     font-size: 1.5rem;
     margin-left: 1rem;
     text-decoration: none;
+    color: black;
 }
 
 .toolbar__navigation-items a {
     text-decoration: none;
+    color: black;
 }
 
 .toolbar__navigation-items a:hover,
@@ -61,5 +63,8 @@
     }
     .toolbar__logo {
         margin-left: 0;
+    }
+    .ten_nguoi_dung {
+        display: none;
     }
 }
