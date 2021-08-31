@@ -1,8 +1,10 @@
 .inputText {
     margin: 15px;
     display: block;
-    padding: 15px;
-    font-size: 18px;
+    width: 400px;
+    max-width: 80%;
+    padding: 10px;
+    font-size: 1rem;
 }
 
 #SubmitButton {
