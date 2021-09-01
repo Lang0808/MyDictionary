@@ -8,7 +8,7 @@ const config = process.env.DATABASE_URL;
 
 const pool = new Pool({
     connectionString: config,
-    /*ssl: { rejectUnauthorized: false } */
+    ssl: { rejectUnauthorized: false }
 });
 
 pool.on('connect', () => {
