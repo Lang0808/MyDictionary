@@ -7,6 +7,8 @@ Deploy 2: https://dictionary-cua-ban.herokuapp.com/ <br/> (quên mật khẩu ac
 I don't have any skill in security so please do not spam and create too much account <br/>
 Function change definition of specific word has an error in Firefox, this stuff makes me very sad because Firefox is my favorite web browser<br/>
 But everything still well on Edge and Chrome<br/>
+I made Sidebar and responsive navbar for this web app so it's still looks great on mobile phone<br/>
+Because this is my second project so it has a lot of mistake (like not divide components into folder properly)<br/>
 
 # Run MyDictionary
 Clone this repository into your local machine<br/>
