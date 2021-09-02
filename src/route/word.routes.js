@@ -7,5 +7,6 @@ router.post('/word/getRandomTen', wordController.getRandomTen);
 router.post('/word/fewWord', wordController.getFewWord);
 router.post('/word/getWordInDetail', wordController.getWordInDetail);
 router.post('/word/changeWord', wordController.changeWord);
+router.post('/word/loadWord', wordController.loadWord);
 
 module.exports = router;

@@ -1,0 +1,19 @@
+.AllYourWordWrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative
+}
+
+.all-your-word-table {
+    width: 65%;
+}
+
+@media (max-width: 1200px) {
+    .AllYourWordWrapper {
+        flex-direction: column;
+    }
+    .all-your-word-table {
+        width: 90%;
+        margin: auto;
+    }
+}

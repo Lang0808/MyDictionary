@@ -6,12 +6,13 @@ CREATE TABLE nguoi_dung (
 );
 
 CREATE TABLE word (
+	id serial primary key,
 	nguoi_dung varchar(50),
 	ngon_ngu_1 varchar(50),
 	ngon_ngu_2 varchar(50),
 	tu_1 varchar(200),
 	tu_2 varchar(200),
-	PRIMARY KEY (nguoi_dung, ngon_ngu_1, ngon_ngu_2, tu_1)
+	unique(nguoi_dung, ngon_ngu_1, ngon_ngu_2, tu_1)
 );
 
 ALTER TABLE word

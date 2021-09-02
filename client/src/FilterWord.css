@@ -1,0 +1,59 @@
+.filter-wrapper {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-bottom: 10px;
+    max-width: 450px;
+}
+
+@media (max-width: 1200px) {
+    .filter-wrapper {
+        position: static;
+        width: 90%;
+    }
+}
+
+.filter-button {
+    padding: 10px;
+    background-color: lightblue;
+    margin: 10px;
+}
+
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-form-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.filter-form-select-container {
+    margin: 10px;
+}
+
+.filter-form-label {
+    color: red;
+    margin: 10px;
+    padding: 10px;
+}
+
+.filter {
+    padding: 10px;
+    margin: 10px;
+}
+
+.filter-submit {
+    background-color: lightcoral;
+    padding: 10px;
+    margin: 10px;
+}

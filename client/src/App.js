@@ -92,6 +92,7 @@ class App extends React.Component {
     if(this.state.sideDrawerOn){
       backDrop=<BackDrop click={this.handleCloseSideDrawer}/>
     }
+    console.log(this.props);
     return (
       <Router style={{height: '100%'}}>
       <div className="App">

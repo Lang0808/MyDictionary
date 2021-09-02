@@ -3,6 +3,7 @@ import React from "react";
 import SearchYourWord from "./SearchYourWord";
 import TenRandomWord from "./TenRandomWord";
 import "./YourDictionary.css";
+import AllYourWord from "./AllYourWord";
 
 class YourWord extends React.Component{
     constructor(props){
@@ -11,11 +12,16 @@ class YourWord extends React.Component{
             SearchValue: '',
             SearchData: [],
             dataTenRandom: [],
+            prevY: 0,
+            loading: false,
+            lastId: 0,
+            words: [],
         };
         this.handleSearchWord=this.handleSearchWord.bind(this);
         this.handleChangeSearchWord=this.handleChangeSearchWord.bind(this);
         this.handleRoll=this.handleRoll.bind(this);
     }
+
     handleRoll(){
         const information={
             user: this.props.user,
@@ -54,6 +60,7 @@ class YourWord extends React.Component{
                 <div id="YourDictionaryWrapper">Bạn cần phải đăng nhập</div>
             )
         }
+        console.log(window.location.search);
         return (
             <div id="YourDictionaryWrapper">
                 <h2>Từ điển của bạn</h2>
@@ -63,6 +70,7 @@ class YourWord extends React.Component{
                                 handleSearchWord={this.handleSearchWord}
                                 Words={this.state.SearchData}/>
                 <TenRandomWord handleRoll={this.handleRoll} data={this.state.dataTenRandom}/>
+                <AllYourWord user={this.props.user}/>
             </div>
             
         )

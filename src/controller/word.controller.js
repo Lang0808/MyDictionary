@@ -46,3 +46,24 @@ exports.changeWord = async(req, res) => {
     );
     res.status(200).send(response.rows);
 }
+
+exports.loadWord = async(req, res) => {
+    if (req.body.search_query.length == 0) {
+        const response = await db.query(
+            "SELECT * FROM word WHERE id > $1 and nguoi_dung=$2  ORDER BY id LIMIT 10", [req.body.lastId, req.body.user]
+        );
+        res.status(200).send(response.rows);
+        return;
+    } else {
+
+        const search_arr = req.body.search_query.split('&');
+        const language1 = search_arr[0].split('=')[1];
+        const language2 = search_arr[1].split('=')[1];
+        const response = await db.query(
+            "SELECT * FROM word WHERE id > $1 and nguoi_dung=$2 and ngon_ngu_1=$3 and ngon_ngu_2=$4 ORDER BY id LIMIT 10", [req.body.lastId, req.body.user, language1, language2]
+        );
+        res.status(200).send(response.rows);
+        return;
+    }
+
+}

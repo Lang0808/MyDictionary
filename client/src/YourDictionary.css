@@ -1,4 +1,6 @@
 #YourDictionaryWrapper {
-    margin-top: 64px;
     text-align: center;
+    margin: auto;
+    margin-top: 64px;
+    width: 96%;
 }
